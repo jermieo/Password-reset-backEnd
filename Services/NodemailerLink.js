@@ -11,7 +11,8 @@ const maillink = async (resetdata) => {
       pass: "yasl lfym hmcg gscj",
     },
   });
-  const emailHtml = "http://localhost:3000/resetpassword";
+  const emailHtml =
+    "https://loginpage-password-reset.netlify.app/resetpassword";
 
   let details = {
     from: "jermieorex1798@gmail.com",
