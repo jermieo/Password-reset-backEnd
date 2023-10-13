@@ -3,7 +3,7 @@ import Registration from "../Models/Model.Registration.js";
 
 const maillink = async (resetdata) => {
   const { userEmail } = resetdata;
-  const resetpassword = await Registration.findOne({ userEmail: userEmail });
+  const resetpasswords = await Registration.findOne({ userEmail: userEmail });
   let mailTransporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -16,7 +16,7 @@ const maillink = async (resetdata) => {
 
   let details = {
     from: "jermieorex1798@gmail.com",
-    to: resetpassword.userEmail,
+    to: resetpasswords.userEmail,
     subject: "Go to Reset page",
     text: emailHtml,
   };
